@@ -25,7 +25,15 @@ public class Payment implements Serializable {
 	private Long id;
 	private Instant moment;
 
+	public Order getOrder() {
+		return order;
+	}
 
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+	@JsonIgnore
 	@OneToOne
 	@MapsId
 	private Order order;
